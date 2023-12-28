@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import Header from './components/Header'
 import Navbar from './components/Navbar'
+import About from './components/About'
 
 import { Inter, Pixelify_Sans } from 'next/font/google'
 
@@ -12,6 +12,7 @@ export default function Home() {
       <Navbar />
       <div className="container mt-24 mx-auto px-12 py-4">
         <Header />
+        <About />
       </div>
     </main>
   )
