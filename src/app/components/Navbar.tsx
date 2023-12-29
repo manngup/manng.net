@@ -6,6 +6,8 @@ import NavLink from './NavLink'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import MobileMenu from './MobileMenu';
+// import GitHubIcon from '@mui/icons-material/GitHub';
+// import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const navLinks = [
     {
@@ -45,6 +47,12 @@ const Navbar = () => {
             </div>
             <div className="menu hidden md:block md:w-auto" id="navbar">
                 <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
+                    {/* <button onClick={() => window.open("https://github.com/Malrigus")}>
+                        <GitHubIcon className="w-10 h-10" />
+                    </button>
+                    <button onClick={() => window.open("https://www.linkedin.com/in/manngupta22/")}>
+                        <LinkedInIcon className="w-10 h-10" />
+                    </button> */}
                     {
                         navLinks.map((link, index) => (
                             <li key={index}>

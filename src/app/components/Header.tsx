@@ -2,9 +2,10 @@
 
 import React from 'react'
 import Image from 'next/image'
-import next from 'next'
-
 import { TypeAnimation } from 'react-type-animation';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
 
 const TypedName = () => {
   return (
@@ -42,8 +43,16 @@ const Header = () => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ultrices nisl magna, eget tempor sem dignissim eget.
                 </p>
                 <div>
-                    <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-white hover:bg-gray-400 text-black">Hire Me</button>
-                    <button className="px-6 py-3 w-full sm:w-fit rounded-full bg-transparent hover:bg-gray-700 text-white border border-white mt-3">Resume</button>
+                    <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-white hover:bg-gray-400 text-black">Contact Me</button>
+                    <button onClick={() => window.open("/files/Gupta_Mann_Resume.pdf", '_blank')} className="px-6 py-3 w-full sm:w-fit rounded-full bg-transparent hover:bg-gray-700 text-white border border-white mt-3">Resume</button>
+                </div>
+                <div className="p-8">
+                    <button onClick={() => window.open("https://github.com/Malrigus")}>
+                        <GitHubIcon className="w-20 h-20" />
+                    </button>
+                    <button onClick={() => window.open("https://www.linkedin.com/in/manngupta22/")}>
+                        <LinkedInIcon className="w-20 h-20" />
+                    </button>
                 </div>
             </div>
             <div className="col-span-5 place-self-center mt-4 lg:mt-0 ">
