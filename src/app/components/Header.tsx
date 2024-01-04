@@ -48,10 +48,10 @@ const Header = () => {
                 </div>
                 <div className="p-8">
                     <button onClick={() => window.open("https://github.com/Malrigus")}>
-                        <GitHubIcon className="w-20 h-20" />
+                        <GitHubIcon style={{ width: '80px', height: '80px' }} className="w-20 h-20" />
                     </button>
                     <button onClick={() => window.open("https://www.linkedin.com/in/manngupta22/")}>
-                        <LinkedInIcon className="w-20 h-20" />
+                        <LinkedInIcon style={{ width: '80px', height: '80px' }} className="w-20 h-20" />
                     </button>
                 </div>
             </div>
