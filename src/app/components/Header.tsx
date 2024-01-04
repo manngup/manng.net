@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link';
 import { TypeAnimation } from 'react-type-animation';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -47,12 +48,12 @@ const Header = () => {
                     <button onClick={() => window.open("/files/Gupta_Mann_Resume.pdf", '_blank')} className="px-6 py-3 w-full sm:w-fit rounded-full bg-transparent hover:bg-gray-700 text-white border border-white mt-3">Resume</button>
                 </div>
                 <div className="p-8">
-                    <button onClick={() => window.open("https://github.com/Malrigus")}>
+                    <Link href={"https://github.com/Malrigus"}>
                         <GitHubIcon style={{ width: '5rem', height: '5rem' }} />
-                    </button>
-                    <button onClick={() => window.open("https://www.linkedin.com/in/manngupta22/")}>
+                    </Link>
+                    <Link href={"https://www.linkedin.com/in/manngupta22/"}>
                         <LinkedInIcon style={{ width: '5rem', height: '5rem' }} />
-                    </button>
+                    </Link>
                 </div>
             </div>
             <div className="col-span-5 place-self-center mt-4 lg:mt-0 ">
