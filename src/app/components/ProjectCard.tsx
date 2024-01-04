@@ -13,7 +13,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ imgURL, title, description, gitURL, launchURL }) => {
   return (
-    <div className="hover:scale-105 transition-all duration-500">
+    <div className="shadow-lg hover:scale-105 hover:shadow-xl stransition-all duration-500">
         <div 
             className="h-52 md:h-72 rounded-t-lg relative group"
             style={{ background: `url(${imgURL})`, backgroundSize: "cover"}}
