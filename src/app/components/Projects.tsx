@@ -8,6 +8,9 @@ const projectsData = [
         description: "project 1 description",
         img: "/images/landscape.jpg",
         tag: ["All", "Web"],
+        gitURL: "/",
+        launchURL: "/",
+
     },
     {
         id: 2,
@@ -15,6 +18,8 @@ const projectsData = [
         description: "project 2 description",
         img: "/images/landscape.jpg",
         tag: ["All", "Games"],
+        gitURL: "/",
+        launchURL: "/",
     },
     {
         id: 3,
@@ -22,6 +27,8 @@ const projectsData = [
         description: "project 3 description",
         img: "/images/landscape.jpg",
         tag: ["All", "Web"],
+        gitURL: "/",
+        launchURL: "/",
     },
 ]
 
@@ -39,6 +46,8 @@ const Projects = () => {
                     description={project.description}
                     imgURL={project.img}
                     //tags={project}
+                    gitURL={project.gitURL}
+                    launchURL={project.launchURL}
                 />
             ))}
         </div>
