@@ -1,5 +1,8 @@
+"use client"
+
 import React from 'react'
 import ProjectCard from './ProjectCard'
+import { Fade } from "react-awesome-reveal";
 
 const projectsData = [
     {
@@ -39,17 +42,19 @@ const Projects = () => {
             My Projects
         </h2>
         <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-            {projectsData.map((project) => (
-                <ProjectCard
-                    key={project.id}
-                    title={project.title}
-                    description={project.description}
-                    imgURL={project.img}
-                    //tags={project}
-                    gitURL={project.gitURL}
-                    launchURL={project.launchURL}
-                />
-            ))}
+            <Fade triggerOnce fraction={0.25}>
+                {projectsData.map((project) => (
+                    <ProjectCard
+                        key={project.id}
+                        title={project.title}
+                        description={project.description}
+                        imgURL={project.img}
+                        //tags={project}
+                        gitURL={project.gitURL}
+                        launchURL={project.launchURL}
+                    />
+                ))}
+            </Fade>
         </div>
     </section>
   )
