@@ -21,7 +21,7 @@ export async function POST(req, res) {
         <h1>{subject}</h1>
         <p>Thank you for contacting!</p>
         <p>The following message has been sent:</p>
-        <p className="italic">"{message}"</p>
+        <p>&quot;{message}&quot;</p>
         <p>Replies to this email will not be received.</p>
       </>
       ),
