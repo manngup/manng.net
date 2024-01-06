@@ -1,9 +1,46 @@
-import React from 'react'
+"use client"
+
+import React, { useState } from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Link from 'next/link';
 
 const Contact = () => {
+
+    const [emailSubmitted, setEmailSubmitted] = useState(false);
+
+    const handleFormSubmission = async (e: React.FormEvent) => {
+        e.preventDefault();
+        const form = e.target as HTMLFormElement;
+        const data = {
+            email: (form.elements.namedItem('email') as HTMLInputElement)?.value || '',
+            subject: (form.elements.namedItem('subject') as HTMLInputElement)?.value || '',
+            message: (form.elements.namedItem('message') as HTMLInputElement)?.value || '',
+        };
+        const JSONdata = JSON.stringify(data);
+        const endpoint = "/api/send";
+
+        // Form the request for sending data to the server.
+        const options = {
+            // The method is POST because we are sending data.
+            method: "POST",
+            // Tell the server we're sending JSON.
+            headers: {
+                "Content-Type": "application/json",
+            },
+            // Body of the request is the JSON data we created above.
+            body: JSONdata,
+        };
+
+        const response = await fetch(endpoint, options);
+        const resData = await response.json();
+
+        if (response.status === 200) {
+            console.log("Message sent.");
+            setEmailSubmitted(true);
+        }
+    };
+
   return (
     <section id="contact" className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4">        
         <div>
@@ -23,12 +60,13 @@ const Contact = () => {
             </div>
         </div>
         <div>
-            <form className="flex flex-col">
+            <form className="flex flex-col" onSubmit={handleFormSubmission}>
                 <div className="mb-6">
                     <label htmlFor="email" className="text-white block text-sm font-medium mb-2">
                         Your Email
                     </label>
                     <input
+                        name="email"
                         type="email"
                         id="email"
                         required placeholder="name@gmail.com"
@@ -40,6 +78,7 @@ const Contact = () => {
                         Subject
                     </label>
                     <input
+                        name="subject"
                         type="text"
                         id="subject"
                         required placeholder="Hi, what's up!"
@@ -64,6 +103,11 @@ const Contact = () => {
                     Send Message
                 </button>
             </form>
+            {emailSubmitted ? (
+            <p className="text-green-500 text-sm mt-2">
+                Email sent successfully!
+            </p>
+            ) : (<p></p>)}
         </div>
     </section>
   )
