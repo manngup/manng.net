@@ -49,10 +49,10 @@ const Header = () => {
                 </div>
                 <div className="p-8">
                     <Link href={"https://github.com/Malrigus"}>
-                        <GitHubIcon style={{ width: '5rem', height: '5rem' }} />
+                        <GitHubIcon style={{ width: '5rem', height: '5rem', color: 'white'}} />
                     </Link>
                     <Link href={"https://www.linkedin.com/in/manngupta22/"}>
-                        <LinkedInIcon style={{ width: '5rem', height: '5rem' }} />
+                        <LinkedInIcon style={{ width: '5rem', height: '5rem', color: 'white' }} />
                     </Link>
                 </div>
             </div>
