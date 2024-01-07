@@ -103,11 +103,15 @@ const Contact = () => {
                     Send Message
                 </button>
             </form>
-            {emailSubmitted ? (
-            <p className="text-green-500 text-sm mt-2">
-                Email sent successfully!
-            </p>
-            ) : (<p></p>)}
+            {
+                //if email submitted show a successful message
+                emailSubmitted ? (
+                <p className="text-green-500 text-sm mt-2">
+                    Email sent successfully!
+                </p>
+                ) : (<p></p>)
+                //chose to display a blank paragraph element so elements on the page don't shift around
+            }
         </div>
     </section>
   )
