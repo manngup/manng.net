@@ -51,7 +51,7 @@ const Contact = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ultrices nisl magna, eget tempor sem dignissim eget.
             </p>
             <div className="socials flex flex-row gap-2">
-                <Link href={"https://github.com/manngi"}>
+                <Link href={"https://github.com/manngup"}>
                     <GitHubIcon style={{ width: '5rem', height: '5rem', color: 'white' }} />
                 </Link>
                 <Link href={"https://www.linkedin.com/in/manngupta22/"}>
