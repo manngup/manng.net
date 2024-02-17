@@ -51,10 +51,10 @@ const Contact = () => {
             I am actively seeking Summer Software Engineering opportunities. If you have a position available or would like to connect, please don't hesitate to reach out to me via LinkedIn or through my contact form.
             </p>
             <div className="socials flex flex-row gap-2">
-                <Link href={"https://github.com/manngup"}>
+                <Link href={"https://github.com/manngup"} target="_blank">
                     <GitHubIcon style={{ width: '5rem', height: '5rem', color: 'white' }} />
                 </Link>
-                <Link href={"https://www.linkedin.com/in/manngupta22/"}>
+                <Link href={"https://www.linkedin.com/in/manngupta22/"} target="_blank">
                     <LinkedInIcon style={{ width: '5rem', height: '5rem', color: 'white' }} />
                 </Link>
             </div>

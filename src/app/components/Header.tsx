@@ -48,10 +48,10 @@ const Header = () => {
                     <button onClick={() => window.open("/files/Gupta_Mann_Resume.pdf", '_blank')} className="px-6 py-3 w-full sm:w-fit rounded-full bg-transparent hover:bg-gray-700 text-white border border-white mt-3">Resume</button>
                 </div>
                 <div className="p-8">
-                    <Link href={"https://github.com/manngup"}>
+                    <Link href={"https://github.com/manngup"} target="_blank">
                         <GitHubIcon style={{ width: '5rem', height: '5rem', color: 'white'}} />
                     </Link>
-                    <Link href={"https://www.linkedin.com/in/manngupta22/"}>
+                    <Link href={"https://www.linkedin.com/in/manngupta22/"} target="_blank">
                         <LinkedInIcon style={{ width: '5rem', height: '5rem', color: 'white' }} />
                     </Link>
                 </div>
