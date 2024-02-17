@@ -48,7 +48,7 @@ const Contact = () => {
                 Connect with me!
             </h5>
             <p className="text-gray-400 mb-4 max-w-md">
-            I am actively seeking Summer Software Engineering opportunities. If you have a position available or would like to connect, please don't hesitate to reach out to me via LinkedIn or through my contact form.
+            I am actively seeking Summer Software Engineering opportunities. If you have a position available or would like to connect, please don&apos;t hesitate to reach out to me via LinkedIn or through my contact form.
             </p>
             <div className="socials flex flex-row gap-2">
                 <Link href={"https://github.com/manngup"} target="_blank">
