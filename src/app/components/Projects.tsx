@@ -7,31 +7,31 @@ import { Fade } from "react-awesome-reveal";
 const projectsData = [
     {
         id: 1,
-        title: "next.js portfolio website",
-        description: "project 1 description",
+        title: "Next.js portfolio website",
+        description: "This portfolio page, made with Next.js",
         img: "/images/landscape.jpg",
         tag: ["All", "Web"],
-        gitURL: "/",
-        launchURL: "/",
+        gitURL: "https://github.com/manngup/manng.net",
+        launchURL: "https://manng.net",
 
     },
     {
         id: 2,
-        title: "scratch invaders",
-        description: "project 2 description",
+        title: "Scratch Invaders",
+        description: "Unity2D game dev project for WSoft Shammy Jam",
         img: "/images/landscape.jpg",
         tag: ["All", "Games"],
-        gitURL: "/",
-        launchURL: "/",
+        gitURL: "https://github.com/NovaBro/GameJamASTEROID",
+        launchURL: "https://malrigus.itch.io/scratch-invaders",
     },
     {
         id: 3,
-        title: "guitar helperer",
-        description: "project 3 description",
+        title: "Park Swift",
+        description: "Ann Arbor parking space rental app currently being made with React Native",
         img: "/images/landscape.jpg",
         tag: ["All", "Web"],
-        gitURL: "/",
-        launchURL: "/",
+        gitURL: "https://github.com/void-tech-um/park-swift",
+        launchURL: "https://github.com/void-tech-um/park-swift",
     },
 ]
 

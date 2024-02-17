@@ -41,7 +41,7 @@ const Header = () => {
                     <TypedName />
                 </h1>
                 <p className="text-gray-400 text-base sm:text-lg mb-6 lg:text-xl">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ultrices nisl magna, eget tempor sem dignissim eget.
+                    Welcome to my webpage!
                 </p>
                 <div>
                     <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-white hover:bg-gray-400 text-black">Contact Me</button>

@@ -10,11 +10,15 @@ const About = () => {
             alt="landscape image"
             width={500}
             height={500}
+            className='mb-4'
             />
             <div>
                 <h2 className="text-4xl font-bold text-white mb-4">About me</h2>
+                <p className="text-base lg:text-lg mb-4">
+                I am currently completing a Bachelor of Science in Engineering at the University of Michigan. I am majoring in Computer Science and minoring in Music.
+                </p>
                 <p className="text-base lg:text-lg">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ultrices nisl magna, eget tempor sem dignissim eget.
+                I have also recently started leading a team of developers in making an app, Park Swift, in a full stack development club on campus called VOID tech. We aim to make it easier for students to find parking spaces to rent in Ann Arbor.
                 </p>
             </div>
         </div>
