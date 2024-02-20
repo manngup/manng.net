@@ -8,8 +8,8 @@ const About = () => {
             <Image 
             src="/images/djing-min-min.jpg"
             alt="djing image"
-            width={500}
-            height={500}
+            width={600}
+            height={600}
             className='mb-4'
             />
             <div>
