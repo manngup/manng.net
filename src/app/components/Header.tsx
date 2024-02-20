@@ -44,7 +44,7 @@ const Header = () => {
                     Welcome to my webpage!
                 </p>
                 <div>
-                    <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-white hover:bg-gray-400 text-black">Contact Me</button>
+                    <button onClick={() => window.location.href='#contact'} className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-white hover:bg-gray-400 text-black">Contact Me</button>
                     <button onClick={() => window.open("/files/Gupta_Mann_Resume.pdf", '_blank')} className="px-6 py-3 w-full sm:w-fit rounded-full bg-transparent hover:bg-gray-700 text-white border border-white mt-3">Resume</button>
                 </div>
                 <div className="p-8">
