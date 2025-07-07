@@ -15,12 +15,12 @@ const About = () => {
         <div>
           <h2 className="text-4xl font-bold text-white mb-4">About me</h2>
           <p className="text-base lg:text-lg mb-4">
-            I’m currently pursuing a Bachelor of Science in Engineering at the
-            University of Michigan, majoring in Computer Science with a minor in
-            Music.
+            I&apos;m currently pursuing a Bachelor of Science in Engineering at
+            the University of Michigan, majoring in Computer Science with a
+            minor in Music.
           </p>
           <p className="text-base lg:text-lg">
-            I’m also the Vice President of Development at VOID Tech, a
+            I&apos;m also the Vice President of Development at VOID Tech, a
             full-stack development club on campus. I currently lead a team
             building a VOD streaming platform for a local film studio.
             Previously, I led the development of Park Swift, an app that helps
