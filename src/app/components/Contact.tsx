@@ -61,10 +61,7 @@ const Contact = () => {
               style={{ width: "5rem", height: "5rem", color: "white" }}
             />
           </Link>
-          <Link
-            href={"https://www.linkedin.com/in/manngupta22/"}
-            target="_blank"
-          >
+          <Link href={"https://www.linkedin.com/in/manng/"} target="_blank">
             <LinkedInIcon
               style={{ width: "5rem", height: "5rem", color: "white" }}
             />
