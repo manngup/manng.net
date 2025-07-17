@@ -49,7 +49,14 @@ const Header = () => {
             >
               Contact Me
             </button>
-            {/* <button onClick={() => window.open("/files/Gupta_Mann_Resume.pdf", '_blank')} className="px-6 py-3 w-full sm:w-fit rounded-full bg-transparent hover:bg-gray-700 text-white border border-white mt-3">Resume</button> */}
+            {/* <button
+              onClick={() =>
+                window.open("/files/Gupta_Mann_Resume.pdf", "_blank")
+              }
+              className="px-6 py-3 w-full sm:w-fit rounded-full bg-transparent hover:bg-gray-700 text-white border border-white mt-3"
+            >
+              Resume
+            </button> */}
           </div>
           <div className="p-8">
             <Link href={"https://github.com/manngup"} target="_blank">
@@ -67,11 +74,11 @@ const Header = () => {
         <div className="col-span-5 place-self-center mt-4 lg:mt-0 ">
           <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
             <Image
-              src="/images/avatar-no-bg.png"
+              src="/images/avatar-circle-crop.png"
               alt="portfolio image"
               className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={300}
-              height={300}
+              width={400}
+              height={400}
             />
           </div>
         </div>
