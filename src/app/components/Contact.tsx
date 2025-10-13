@@ -1,15 +1,27 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Link from "next/link";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 const Contact = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const turnstileRef = useRef<any>(null);
 
   const handleFormSubmission = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Check if Turnstile token is present
+    if (!turnstileToken) {
+      alert("Please complete the security verification.");
+      return;
+    }
+
+    setIsSubmitting(true);
     const form = e.target as HTMLFormElement;
     const data = {
       email:
@@ -18,6 +30,7 @@ const Contact = () => {
         (form.elements.namedItem("subject") as HTMLInputElement)?.value || "",
       message:
         (form.elements.namedItem("message") as HTMLInputElement)?.value || "",
+      turnstileToken: turnstileToken,
     };
     const JSONdata = JSON.stringify(data);
     const endpoint = "/api/send";
@@ -34,13 +47,41 @@ const Contact = () => {
       body: JSONdata,
     };
 
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
+    try {
+      const response = await fetch(endpoint, options);
+      const resData = await response.json();
 
-    if (response.status === 200) {
-      console.log("Message sent.");
-      setEmailSubmitted(true);
+      if (response.status === 200) {
+        console.log("Message sent.");
+        setEmailSubmitted(true);
+        // Reset the form and Turnstile
+        form.reset();
+        setTurnstileToken(null);
+        turnstileRef.current?.reset();
+      } else {
+        console.error("Error sending message:", resData);
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
+  };
+
+  const handleTurnstileSuccess = (token: string) => {
+    setTurnstileToken(token);
+  };
+
+  const handleTurnstileError = () => {
+    setTurnstileToken(null);
+    console.error("Turnstile verification failed");
+  };
+
+  const handleTurnstileExpire = () => {
+    setTurnstileToken(null);
+    console.log("Turnstile token expired");
   };
 
   return (
@@ -117,11 +158,25 @@ const Contact = () => {
               className="bg-gray-100 border border-gray-400 placeholder-gray-400 text-gray-600 rounded p-2 block w-full"
             />
           </div>
+          <div className="mb-6 flex justify-center">
+            <Turnstile
+              ref={turnstileRef}
+              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ""}
+              onSuccess={handleTurnstileSuccess}
+              onError={handleTurnstileError}
+              onExpire={handleTurnstileExpire}
+              options={{
+                theme: "dark",
+                size: "flexible",
+              }}
+            />
+          </div>
           <button
             type="submit"
-            className="border rounded block w-full p-3 text-white font-semibold hover:scale-105 transition-all duration-250"
+            disabled={isSubmitting || !turnstileToken}
+            className="border rounded block w-full p-3 text-white font-semibold hover:scale-105 transition-all duration-250 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
-            Send Message
+            {isSubmitting ? "Sending..." : "Send Message"}
           </button>
         </form>
         {
